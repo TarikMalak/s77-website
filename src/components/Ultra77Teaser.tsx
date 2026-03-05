@@ -15,10 +15,12 @@ export default function Ultra77Teaser() {
           transition={{ duration: 0.8, ease: easeSmooth }}
           className="mx-auto max-w-3xl text-center"
         >
-          {/* Ultra77 text logo */}
-          <h2 className="mb-4 text-5xl font-extralight tracking-tight text-text-white md:text-6xl">
-            Ultra<span className="text-accent">77</span>
-          </h2>
+          {/* Ultra77 logo */}
+          <img
+            src="/ultra77-logo.svg"
+            alt="Ultra77"
+            className="mx-auto mb-4 w-[min(70vw,400px)]"
+          />
 
           {/* Tagline */}
           <p className="mb-3 text-lg font-light text-accent-teal md:text-xl">

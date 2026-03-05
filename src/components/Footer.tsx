@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-white/5 bg-bg-dark py-8">
       <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-3 px-6 md:flex-row md:justify-between md:px-12">
         {/* Logo */}
-        <img src="/s77-logo.gif" alt="S77.AI" className="h-6 w-auto" />
+        <img src="/s77-logo.svg" alt="S77.AI" className="h-6 w-auto" />
 
         {/* Copyright + parent link */}
         <p className="text-xs font-light text-text-muted">

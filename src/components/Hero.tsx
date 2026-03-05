@@ -13,7 +13,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        {/* S77 GIF Logo */}
+        {/* S77 Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -21,7 +21,7 @@ export default function Hero() {
           className="mb-12"
         >
           <img
-            src="/s77-logo.gif"
+            src="/s77-logo.svg"
             alt="S77.AI logo"
             className="mx-auto h-24 w-auto md:h-32"
           />
