@@ -1,0 +1,54 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { easeSmooth } from '@/lib/motion';
+import { siteData } from '@/lib/data';
+
+export default function Contact() {
+  return (
+    <section id="contact" className="bg-bg-dark py-32 md:py-48">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.8, ease: easeSmooth }}
+          className="mx-auto max-w-2xl text-center"
+        >
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-accent">
+            Get In Touch
+          </p>
+          <h2 className="mb-8 text-4xl font-extralight tracking-tight text-text-white md:text-5xl">
+            Let&rsquo;s build something intelligent.
+          </h2>
+
+          {/* Email */}
+          <a
+            href={`mailto:${siteData.email}`}
+            className="mb-8 inline-block text-2xl font-light text-text-white transition-colors hover:text-accent md:text-3xl"
+          >
+            {siteData.email}
+          </a>
+
+          {/* Address */}
+          <p className="mb-2 text-sm font-light text-text-muted">
+            {siteData.address}
+          </p>
+
+          {/* Parent company */}
+          <p className="text-sm font-light text-text-muted">
+            A division of{' '}
+            <a
+              href={siteData.parentCompany.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-white transition-colors hover:text-accent"
+            >
+              {siteData.parentCompany.name}
+            </a>
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
