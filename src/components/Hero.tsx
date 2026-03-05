@@ -23,26 +23,16 @@ export default function Hero() {
           <img
             src="/s77-logo.svg"
             alt="S77.AI logo"
-            className="mx-auto h-24 w-auto md:h-32"
+            className="mx-auto h-32 w-auto md:h-44"
           />
         </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: easeSmooth, delay: 0.3 }}
-          className="mb-6 text-5xl font-extralight tracking-tight text-text-white md:text-7xl"
-        >
-          {hero.headline}
-        </motion.h1>
 
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: easeSmooth, delay: 0.5 }}
-          className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-text-muted md:text-xl"
+          transition={{ duration: 1, ease: easeSmooth, delay: 0.3 }}
+          className="mx-auto max-w-2xl text-base font-light leading-relaxed text-text-muted md:text-lg"
         >
           {hero.subtitle}
         </motion.p>

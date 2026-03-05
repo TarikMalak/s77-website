@@ -15,11 +15,8 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: easeSmooth }}
           className="mx-auto max-w-2xl text-center"
         >
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-accent">
+          <h2 className="mb-8 text-sm font-medium uppercase tracking-[0.2em] text-accent">
             Get In Touch
-          </p>
-          <h2 className="mb-8 text-4xl font-extralight tracking-tight text-text-white md:text-5xl">
-            Let&rsquo;s build something intelligent.
           </h2>
 
           {/* Email */}

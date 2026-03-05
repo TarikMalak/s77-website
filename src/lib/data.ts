@@ -30,20 +30,20 @@ export const hero = {
 
 export const pillars = [
   {
-    id: 'aio-aeo',
+    id: 'ai-content',
     number: '01',
+    title: 'AI Content Studio',
+    subtitle: 'AI as VFX. AI as full content production.',
+    description:
+      "We use generative AI as a creative production tool — for environment extension, compositing, motion graphics, previsualization, and full content creation. We treat AI as VFX, not a shortcut. Every AI-generated or AI-enhanced asset is guided by senior creative direction, maintaining brand standards and emotional resonance while dramatically accelerating production timelines and expanding creative possibilities.",
+  },
+  {
+    id: 'aio-aeo',
+    number: '02',
     title: 'AIO / AEO',
     subtitle: 'Proprietary tools for AI discoverability',
     description:
       "We've developed proprietary AI Optimization (AIO) and Answer Engine Optimization (AEO) tools that ensure brand content is discoverable by both traditional search engines and AI systems like ChatGPT, Perplexity, and Claude. Our approach goes beyond traditional SEO — we optimize for how AI models parse, rank, and surface brand information, ensuring your brand appears in AI-generated answers, not just search results.",
-  },
-  {
-    id: 'ai-content',
-    number: '02',
-    title: 'AI Content Production',
-    subtitle: 'AI as VFX. AI as full content production.',
-    description:
-      "We use generative AI as a creative production tool — for environment extension, compositing, motion graphics, previsualization, and full content creation. We treat AI as VFX, not a shortcut. Every AI-generated or AI-enhanced asset is guided by senior creative direction, maintaining brand standards and emotional resonance while dramatically accelerating production timelines and expanding creative possibilities.",
   },
   {
     id: 'ai-social',
