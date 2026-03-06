@@ -1,3 +1,4 @@
+import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import WhatWeDo from '@/components/WhatWeDo';
 import Ultra77Teaser from '@/components/Ultra77Teaser';
@@ -19,6 +20,7 @@ export default async function Home() {
       <OrganizationJsonLd settings={settings} services={services} />
       <WebSiteJsonLd settings={settings} />
       <ServiceJsonLd services={services} />
+      <Nav />
       <main>
         <Hero headline={hero.headline} subtitle={hero.subtitle} />
         <WhatWeDo services={services} />
