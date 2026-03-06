@@ -22,14 +22,6 @@ export const metadata: Metadata = {
     siteName: 'S77.AI',
     locale: 'en_US',
     type: 'website',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'S77.AI — Intelligence Built In',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
