@@ -50,7 +50,12 @@ export default function WhatWeDo({ services }: { services: Service[] }) {
                   {pillar.subtitle}
                 </p>
                 <p className="max-w-2xl text-base font-light leading-relaxed text-text-muted">
-                  {pillar.description}
+                  {pillar.description.split('\n').map((line, i, arr) => (
+                    <span key={i}>
+                      {line}
+                      {i < arr.length - 1 && <br />}
+                    </span>
+                  ))}
                 </p>
               </div>
             </motion.article>

@@ -34,7 +34,12 @@ export default function Ultra77Teaser({ data }: { data: Ultra77Section }) {
 
           {/* Description */}
           <p className="text-base font-light leading-relaxed text-text-muted">
-            {data.description}
+            {data.description.split('\n').map((line, i, arr) => (
+              <span key={i}>
+                {line}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </motion.div>
       </div>
