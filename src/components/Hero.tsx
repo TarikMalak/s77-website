@@ -25,6 +25,9 @@ export default function Hero({ headline, subtitle }: { headline: string; subtitl
           />
         </motion.div>
 
+        {/* Headline (sr-only for SEO, logo is the visual headline) */}
+        <h1 className="sr-only">{headline}</h1>
+
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}

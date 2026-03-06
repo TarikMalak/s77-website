@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     "S77.AI is SWELL's dedicated AI division, building proprietary tools for AI Optimization (AIO), Answer Engine Optimization (AEO), AI-enhanced content production, and AI-driven social strategy for fashion, beauty, luxury, and lifestyle brands.",
   metadataBase: new URL('https://s77.ai'),
   alternates: { canonical: '/' },
+  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
+  manifest: '/manifest.json',
   openGraph: {
     title: 'S77.AI | AI Division of SWELL',
     description:
@@ -47,6 +49,8 @@ export default function RootLayout({
       <head>
         <link rel="llms-txt" href="https://s77.ai/llms.txt" />
         <link rel="llms-txt-full" href="https://s77.ai/llms-full.txt" />
+        <link rel="dns-prefetch" href="https://swellny.com" />
+        <link rel="dns-prefetch" href="https://maxhpprod.com" />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}

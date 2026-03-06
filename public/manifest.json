@@ -1,0 +1,9 @@
+{
+  "name": "S77.AI — AI Division of SWELL",
+  "short_name": "S77.AI",
+  "description": "Proprietary AI tools for AIO, AEO, content production, and social strategy.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A0A0A",
+  "theme_color": "#6C63FF"
+}

@@ -23,9 +23,9 @@ export default function Ultra77Teaser({ data }: { data: Ultra77Section }) {
           />
 
           {/* Tagline */}
-          <p className="mb-3 text-lg font-light text-accent-teal md:text-xl">
+          <h2 className="mb-3 text-lg font-light text-accent-teal md:text-xl">
             {data.tagline}
-          </p>
+          </h2>
 
           {/* Status badge */}
           <div className="mb-8 inline-block rounded-full border border-accent/30 px-4 py-1.5 text-sm font-medium text-accent">
