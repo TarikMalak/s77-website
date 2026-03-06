@@ -81,12 +81,12 @@ export default function ElectricGrid() {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < CONNECTION_DIST) {
-            const alpha = (1 - dist / CONNECTION_DIST) * 0.18;
+            const alpha = (1 - dist / CONNECTION_DIST) * 0.28;
             ctx!.beginPath();
             ctx!.moveTo(nodes[i].x, nodes[i].y);
             ctx!.lineTo(nodes[j].x, nodes[j].y);
             ctx!.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-            ctx!.lineWidth = 0.7;
+            ctx!.lineWidth = 0.9;
             ctx!.stroke();
 
             // Maybe spawn a pulse
@@ -117,25 +117,25 @@ export default function ElectricGrid() {
         const py = from.y + (to.y - from.y) * pulse.progress;
 
         // Glow — larger and stronger
-        const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 30);
-        gradient.addColorStop(0, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.8)`);
-        gradient.addColorStop(0.4, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.2)`);
+        const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 40);
+        gradient.addColorStop(0, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 1)`);
+        gradient.addColorStop(0.3, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.35)`);
         gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx!.beginPath();
-        ctx!.arc(px, py, 30, 0, Math.PI * 2);
+        ctx!.arc(px, py, 40, 0, Math.PI * 2);
         ctx!.fillStyle = gradient;
         ctx!.fill();
 
         // Bright core
         ctx!.beginPath();
-        ctx!.arc(px, py, 2, 0, Math.PI * 2);
+        ctx!.arc(px, py, 2.5, 0, Math.PI * 2);
         ctx!.fillStyle = 'rgba(255, 255, 255, 0.9)';
         ctx!.fill();
       }
 
       // Draw nodes — subtle breathing dots
       for (const n of nodes) {
-        const breath = 0.03 + Math.sin(time * 1.5 + n.phase) * 0.02;
+        const breath = 0.015 + Math.sin(time * 1.5 + n.phase) * 0.01;
         ctx!.beginPath();
         ctx!.arc(n.x, n.y, 0.6, 0, Math.PI * 2);
         ctx!.fillStyle = `rgba(255, 255, 255, ${breath})`;
