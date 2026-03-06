@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { easeSmooth } from '@/lib/motion';
-import { pillars } from '@/lib/data';
+import type { Service } from '@/lib/types';
 
-export default function WhatWeDo() {
+export default function WhatWeDo({ services }: { services: Service[] }) {
   return (
     <section id="what-we-do" className="bg-dot-pattern relative bg-bg-dark py-32 md:py-48">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12">
@@ -26,10 +26,10 @@ export default function WhatWeDo() {
 
         {/* Pillars */}
         <div className="space-y-24">
-          {pillars.map((pillar, i) => (
+          {services.map((pillar, i) => (
             <motion.article
               key={pillar.id}
-              id={pillar.id}
+              id={pillar.title.toLowerCase().replace(/\s+/g, '-')}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
@@ -38,7 +38,7 @@ export default function WhatWeDo() {
             >
               {/* Number */}
               <div className="text-6xl font-extralight text-accent/30 md:text-7xl">
-                {pillar.number}
+                {String(pillar.sort_order).padStart(2, '0')}
               </div>
 
               {/* Content */}

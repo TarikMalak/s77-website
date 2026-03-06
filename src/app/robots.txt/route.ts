@@ -1,6 +1,7 @@
 export async function GET() {
   const body = `User-agent: *
 Allow: /
+Disallow: /admin
 
 User-agent: GPTBot
 Allow: /
@@ -22,6 +23,7 @@ Allow: /
 
 Sitemap: https://s77.ai/sitemap.xml
 LLMs: https://s77.ai/llms.txt
+LLMs-Full: https://s77.ai/llms-full.txt
 `;
 
   return new Response(body, {

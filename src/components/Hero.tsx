@@ -2,9 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { easeSmooth } from '@/lib/motion';
-import { hero } from '@/lib/data';
-
-export default function Hero() {
+export default function Hero({ headline, subtitle }: { headline: string; subtitle: string }) {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-bg-dark">
       {/* Subtle glow behind logo */}
@@ -34,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: easeSmooth, delay: 0.3 }}
           className="mx-auto max-w-2xl text-base font-light leading-relaxed text-text-muted md:text-lg"
         >
-          {hero.subtitle}
+          {subtitle}
         </motion.p>
       </div>
     </section>

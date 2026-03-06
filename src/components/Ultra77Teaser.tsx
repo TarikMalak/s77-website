@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { easeSmooth } from '@/lib/motion';
-import { ultra77 } from '@/lib/data';
+import type { Ultra77Section } from '@/lib/types';
 
-export default function Ultra77Teaser() {
+export default function Ultra77Teaser({ data }: { data: Ultra77Section }) {
   return (
     <section id="ultra77" className="relative bg-bg-surface py-32 md:py-48">
       <div className="mx-auto max-w-[1280px] px-6 md:px-12">
@@ -24,17 +24,17 @@ export default function Ultra77Teaser() {
 
           {/* Tagline */}
           <p className="mb-3 text-lg font-light text-accent-teal md:text-xl">
-            {ultra77.tagline}
+            {data.tagline}
           </p>
 
           {/* Status badge */}
           <div className="mb-8 inline-block rounded-full border border-accent/30 px-4 py-1.5 text-sm font-medium text-accent">
-            {ultra77.status}
+            {data.status}
           </div>
 
           {/* Description */}
           <p className="text-base font-light leading-relaxed text-text-muted">
-            {ultra77.description}
+            {data.description}
           </p>
         </motion.div>
       </div>

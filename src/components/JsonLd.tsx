@@ -1,17 +1,15 @@
-// JSON-LD structured data for S77.AI
+import type { SiteSettings, Service } from '@/lib/types';
 
-import { siteData, pillars } from '@/lib/data';
-
-export function OrganizationJsonLd() {
+export function OrganizationJsonLd({ settings, services }: { settings: SiteSettings; services: Service[] }) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://s77.ai/#organization',
-    name: 'S77.AI',
-    url: 'https://s77.ai',
-    logo: 'https://s77.ai/s77-logo.gif',
-    image: 'https://s77.ai/s77-logo.gif',
-    description: siteData.description,
+    name: settings.name,
+    url: settings.url,
+    logo: 'https://s77.ai/s77-logo.svg',
+    image: 'https://s77.ai/s77-logo.svg',
+    description: settings.description,
     foundingDate: '2024',
     address: {
       '@type': 'PostalAddress',
@@ -27,17 +25,17 @@ export function OrganizationJsonLd() {
       longitude: -74.0059,
     },
     telephone: '+1-646-389-1570',
-    email: siteData.email,
+    email: settings.email,
     parentOrganization: {
       '@type': 'Organization',
       '@id': 'https://swellny.com/#organization',
       name: 'SWELL',
-      legalName: 'SWELL Labs, LLC',
-      url: 'https://swellny.com',
+      legalName: settings.parent_company_name,
+      url: settings.parent_company_url,
     },
     sameAs: [
-      'https://swellny.com',
-      'https://maxhpprod.com',
+      settings.parent_company_url,
+      settings.sister_company_url,
     ],
     areaServed: 'Worldwide',
     knowsAbout: [
@@ -50,13 +48,13 @@ export function OrganizationJsonLd() {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'S77.AI Services',
-      itemListElement: pillars.map((p) => ({
+      name: `${settings.name} Services`,
+      itemListElement: services.map((s) => ({
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: p.title,
-          description: p.subtitle,
+          name: s.title,
+          description: s.subtitle,
         },
       })),
     },
@@ -70,13 +68,13 @@ export function OrganizationJsonLd() {
   );
 }
 
-export function WebSiteJsonLd() {
+export function WebSiteJsonLd({ settings }: { settings: SiteSettings }) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': 'https://s77.ai/#website',
-    name: 'S77.AI',
-    url: 'https://s77.ai',
+    name: settings.site_name,
+    url: settings.url,
     inLanguage: 'en-US',
     publisher: { '@id': 'https://s77.ai/#organization' },
   };
@@ -89,12 +87,12 @@ export function WebSiteJsonLd() {
   );
 }
 
-export function ServiceJsonLd() {
-  const data = pillars.map((p) => ({
+export function ServiceJsonLd({ services }: { services: Service[] }) {
+  const data = services.map((s) => ({
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: p.title,
-    description: p.description,
+    name: s.title,
+    description: s.description,
     provider: { '@id': 'https://s77.ai/#organization' },
     areaServed: 'Worldwide',
   }));

@@ -53,7 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="llms-txt" href="/llms.txt" />
+        <link rel="llms-txt" href="https://s77.ai/llms.txt" />
+        <link rel="llms-txt-full" href="https://s77.ai/llms-full.txt" />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
