@@ -25,7 +25,7 @@ export default function Nav() {
     >
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 md:px-12">
         <a href="#" className="transition-opacity hover:opacity-70">
-          <img src="/s77-logo.svg" alt="S77.AI" className="h-6 w-auto md:h-7" />
+          <img src="/s77-logo.svg" alt="S77.AI" className="h-4 w-auto md:h-5" />
         </a>
         <ul className="flex items-center gap-6 md:gap-8">
           {links.map((link) => (
