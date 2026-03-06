@@ -2,9 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { easeSmooth } from '@/lib/motion';
+import ElectricGrid from './ElectricGrid';
 export default function Hero({ headline, subtitle }: { headline: string; subtitle: string }) {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-bg-dark">
+      {/* Electric grid background */}
+      <ElectricGrid />
+
       {/* Subtle glow behind logo */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="h-[500px] w-[500px] rounded-full bg-accent/5 blur-[120px]" />
