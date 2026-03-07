@@ -17,7 +17,7 @@ interface Pulse {
   speed: number;
 }
 
-const NODE_COUNT = 40;
+const NODE_COUNT = 13;
 const CONNECTION_DIST = 400;
 const PULSE_CHANCE = 0.008;
 const ACCENT = { r: 108, g: 99, b: 255 }; // #6C63FF
