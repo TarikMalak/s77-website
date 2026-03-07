@@ -21,7 +21,7 @@ interface Pulse {
 const NODE_COUNT = 100;
 const VISIBLE_DOTS = 13;
 const CONNECTION_DIST = 450;
-const PULSE_CHANCE = 0.000125;
+const PULSE_CHANCE = 0.0000625;
 const ACCENT = { r: 108, g: 99, b: 255 }; // #6C63FF
 
 export default function ElectricGrid() {
