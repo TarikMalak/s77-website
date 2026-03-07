@@ -21,7 +21,7 @@ interface Pulse {
 const NODE_COUNT = 100;
 const VISIBLE_DOTS = 13;
 const CONNECTION_DIST = 450;
-const PULSE_CHANCE = 0.00025;
+const PULSE_CHANCE = 0.000125;
 const ACCENT = { r: 108, g: 99, b: 255 }; // #6C63FF
 
 export default function ElectricGrid() {
@@ -77,6 +77,9 @@ export default function ElectricGrid() {
         if (n.y < 0 || n.y > h) n.vy *= -1;
       }
 
+      // Heartbeat: slow sine oscillation (0.3 → 1.0)
+      const heartbeat = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin(time * 1.2));
+
       // Draw connections
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
@@ -84,7 +87,7 @@ export default function ElectricGrid() {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < CONNECTION_DIST) {
-            const alpha = (1 - dist / CONNECTION_DIST) * 0.28;
+            const alpha = (1 - dist / CONNECTION_DIST) * 0.28 * heartbeat;
             ctx!.beginPath();
             ctx!.moveTo(nodes[i].x, nodes[i].y);
             ctx!.lineTo(nodes[j].x, nodes[j].y);
