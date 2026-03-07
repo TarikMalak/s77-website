@@ -18,7 +18,7 @@ interface Pulse {
   speed: number;
 }
 
-const NODE_COUNT = 85;
+const NODE_COUNT = 100;
 const VISIBLE_DOTS = 13;
 const CONNECTION_DIST = 450;
 const PULSE_CHANCE = 0.00025;
@@ -120,18 +120,18 @@ export default function ElectricGrid() {
         const py = from.y + (to.y - from.y) * pulse.progress;
 
         // Glow — larger and stronger
-        const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 25);
+        const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 12);
         gradient.addColorStop(0, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 1)`);
         gradient.addColorStop(0.3, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.4)`);
         gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx!.beginPath();
-        ctx!.arc(px, py, 25, 0, Math.PI * 2);
+        ctx!.arc(px, py, 12, 0, Math.PI * 2);
         ctx!.fillStyle = gradient;
         ctx!.fill();
 
         // Bright core
         ctx!.beginPath();
-        ctx!.arc(px, py, 2, 0, Math.PI * 2);
+        ctx!.arc(px, py, 1, 0, Math.PI * 2);
         ctx!.fillStyle = 'rgba(255, 255, 255, 1)';
         ctx!.fill();
       }
