@@ -18,10 +18,10 @@ interface Pulse {
   speed: number;
 }
 
-const NODE_COUNT = 60;
+const NODE_COUNT = 85;
 const VISIBLE_DOTS = 13;
-const CONNECTION_DIST = 400;
-const PULSE_CHANCE = 0.001;
+const CONNECTION_DIST = 450;
+const PULSE_CHANCE = 0.00025;
 const ACCENT = { r: 108, g: 99, b: 255 }; // #6C63FF
 
 export default function ElectricGrid() {
@@ -120,18 +120,18 @@ export default function ElectricGrid() {
         const py = from.y + (to.y - from.y) * pulse.progress;
 
         // Glow — larger and stronger
-        const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 60);
+        const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 25);
         gradient.addColorStop(0, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 1)`);
-        gradient.addColorStop(0.25, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.5)`);
+        gradient.addColorStop(0.3, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.4)`);
         gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx!.beginPath();
-        ctx!.arc(px, py, 60, 0, Math.PI * 2);
+        ctx!.arc(px, py, 25, 0, Math.PI * 2);
         ctx!.fillStyle = gradient;
         ctx!.fill();
 
         // Bright core
         ctx!.beginPath();
-        ctx!.arc(px, py, 3, 0, Math.PI * 2);
+        ctx!.arc(px, py, 2, 0, Math.PI * 2);
         ctx!.fillStyle = 'rgba(255, 255, 255, 1)';
         ctx!.fill();
       }
