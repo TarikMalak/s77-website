@@ -121,8 +121,8 @@ export default function ElectricGrid() {
 
         // Glow — larger and stronger
         const gradient = ctx!.createRadialGradient(px, py, 0, px, py, 12);
-        gradient.addColorStop(0, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 1)`);
-        gradient.addColorStop(0.3, `rgba(${ACCENT.r}, ${ACCENT.g}, ${ACCENT.b}, 0.4)`);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.4)');
         gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx!.beginPath();
         ctx!.arc(px, py, 12, 0, Math.PI * 2);
