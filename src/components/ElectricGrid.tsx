@@ -137,7 +137,7 @@ export default function ElectricGrid() {
       for (const n of nodes) {
         const breath = 0.008 + Math.sin(time * 1.5 + n.phase) * 0.005;
         ctx!.beginPath();
-        ctx!.arc(n.x, n.y, 0.5, 0, Math.PI * 2);
+        ctx!.arc(n.x, n.y, 0.3, 0, Math.PI * 2);
         ctx!.fillStyle = `rgba(255, 255, 255, ${breath})`;
         ctx!.fill();
       }
