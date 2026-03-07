@@ -8,6 +8,7 @@ interface Node {
   vx: number;
   vy: number;
   phase: number; // for subtle breathing
+  visible: boolean; // only visible nodes render as dots
 }
 
 interface Pulse {
@@ -17,7 +18,8 @@ interface Pulse {
   speed: number;
 }
 
-const NODE_COUNT = 13;
+const NODE_COUNT = 60;
+const VISIBLE_DOTS = 13;
 const CONNECTION_DIST = 400;
 const PULSE_CHANCE = 0.008;
 const ACCENT = { r: 108, g: 99, b: 255 }; // #6C63FF
@@ -58,6 +60,7 @@ export default function ElectricGrid() {
           vx: (Math.random() - 0.5) * 0.15,
           vy: (Math.random() - 0.5) * 0.15,
           phase: Math.random() * Math.PI * 2,
+          visible: i < VISIBLE_DOTS,
         });
       }
     }
@@ -133,8 +136,9 @@ export default function ElectricGrid() {
         ctx!.fill();
       }
 
-      // Draw nodes — subtle breathing dots
+      // Draw nodes — only visible ones render as dots
       for (const n of nodes) {
+        if (!n.visible) continue;
         const breath = 0.008 + Math.sin(time * 1.5 + n.phase) * 0.005;
         ctx!.beginPath();
         ctx!.arc(n.x, n.y, 0.3, 0, Math.PI * 2);
